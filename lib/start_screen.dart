@@ -12,6 +12,12 @@ class StartSceen extends StatelessWidget {
             'assets/images/quiz-logo.png',
             width: 300,
           ),
+          const SizedBox(
+            height: 80,
+          ),
+          const Text(
+            'Learn Flutter in a Fun Way',
+          ),
         ],
       ),
     );
