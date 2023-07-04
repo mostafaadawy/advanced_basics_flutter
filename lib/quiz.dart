@@ -2,30 +2,37 @@ import 'package:flutter/material.dart';
 import 'package:advanced_basics_flutter/start_screen.dart';
 import 'package:advanced_basics_flutter/questions_screen.dart';
 
-class Quiz extends StatefulWidget{
-const Quiz({super.key});
+class Quiz extends StatefulWidget {
+  const Quiz({super.key});
   @override
   State<Quiz> createState() {
     return _QuizState();
   }
 }
-class _QuizState extends State<Quiz>{
 
-Widget? activeScreen;
-  @override
-  void initState() {
-    activeScreen =  StartSceen(switchScreen);
-    super.initState();
-  }
-  
-  void switchScreen(){
+class _QuizState extends State<Quiz> {
+// Widget? activeScreen;
+//   @override
+//   void initState() {
+//     activeScreen =  StartSceen(switchScreen);
+//     super.initState();
+//   }
+  var activeScreen = 'start-screen';
+
+  // void switchScreen(){
+  //   setState(() {
+  //     activeScreen = const QuestionsScreen();
+  //   });
+  // }
+
+  void switchScreen() {
     setState(() {
-      activeScreen = const QuestionsScreen();
+      activeScreen = 'questions-screen';
     });
   }
 
   @override
-  Widget build(context){
+  Widget build(context) {
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -39,7 +46,10 @@ Widget? activeScreen;
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen,
+          // child: activeScreen,
+          child: activeScreen == 'start-screen' //anothert method using ternary function if else
+              ? StartSceen(switchScreen)
+              : const QuestionsScreen(),
         ), // withouit comma , alt shift f formate does not work
       ),
     );
