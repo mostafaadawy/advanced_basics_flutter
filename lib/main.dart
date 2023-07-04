@@ -3,9 +3,19 @@ import 'package:advanced_basics_flutter/start_screen.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+     MaterialApp(
       home: Scaffold(
-        body: StartSceen(), // withouit comma , alt shift f formate does not work
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 76, 23, 168),
+                Color.fromARGB(255, 45, 8, 110),
+              ],
+            ),
+          ),
+          child: const StartSceen(),
+        ), // withouit comma , alt shift f formate does not work
       ),
     ),
   );
