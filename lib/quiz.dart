@@ -33,9 +33,13 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(context) {
-    Widget screenWidget = activeScreen == 'start-screen'
-        ? StartSceen(switchScreen)
-        : const QuestionsScreen();
+    // Widget screenWidget = activeScreen == 'start-screen'
+    //     ? StartSceen(switchScreen)
+    //     : const QuestionsScreen();
+    Widget screenWidget = StartSceen(switchScreen);
+    if(activeScreen == 'questions-screen'){
+        screenWidget = const QuestionsScreen();  // third ternary method
+    }
     return MaterialApp(
       home: Scaffold(
         body: Container(
