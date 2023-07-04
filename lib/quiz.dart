@@ -33,6 +33,9 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(context) {
+    Widget screenWidget = activeScreen == 'start-screen'
+        ? StartSceen(switchScreen)
+        : const QuestionsScreen();
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -47,9 +50,10 @@ class _QuizState extends State<Quiz> {
             ),
           ),
           // child: activeScreen,
-          child: activeScreen == 'start-screen' //anothert method using ternary function if else
-              ? StartSceen(switchScreen)
-              : const QuestionsScreen(),
+          // child: activeScreen == 'start-screen' //anothert method using ternary function if else
+          //     ? StartSceen(switchScreen)
+          //     : const QuestionsScreen(),
+          child: screenWidget,
         ), // withouit comma , alt shift f formate does not work
       ),
     );
