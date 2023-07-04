@@ -3,7 +3,7 @@ import 'package:advanced_basics_flutter/start_screen.dart';
 
 void main() {
   runApp(
-     MaterialApp(
+    MaterialApp(
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
@@ -12,6 +12,8 @@ void main() {
                 Color.fromARGB(255, 76, 23, 168),
                 Color.fromARGB(255, 45, 8, 110),
               ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
           child: const StartSceen(),
