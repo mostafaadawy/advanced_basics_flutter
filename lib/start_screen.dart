@@ -8,17 +8,18 @@ class StartSceen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Opacity(
-            opacity: 0.6,
-            child: Image.asset(
-              'assets/images/quiz-logo.png',
-              width: 300,
-            ),
-          ),
-          // Image.asset(
-          //   'assets/images/quiz-logo.png',
-          //   width: 300,
+          // Opacity(
+          //   opacity: 0.6,
+          //   child: Image.asset(
+          //     'assets/images/quiz-logo.png',
+          //     width: 300,
+          //   ),
           // ),
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 300,
+            color: const Color.fromARGB(147, 223, 217, 239), // act as opecity changing first saturation value
+          ),
           const SizedBox(
             height: 80,
           ),
